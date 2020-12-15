@@ -1,5 +1,5 @@
 import java.util.*;
-public class Calculations //make sure that this is a subclass of Dice and inherits all of the properties of Dice 
+public class Calculations extends Dice
 {
     /*Initialize all of the following instance variables
     You need 12 private integers with the following variable names
@@ -11,6 +11,25 @@ public class Calculations //make sure that this is a subclass of Dice and inheri
     Lastly you will need 4 booleans with the following variable names:
     smStraight, lgStraight, fullHouse, & yahtzee
     Set all of the booleans to false.*/
+    private int ones = 0;
+    private int twos = 0;
+    private int threes = 0;
+    private int fours = 0;
+    private int fives = 0;
+    private int sixes = 0;
+    private int chance = 0;
+    private int threeKind = 0;
+    private int fourKind = 0;
+    private int sumAll = 0;
+    private int sameNum = 0;
+    private int maxSame = 0;
+    private int numSame = 0;
+    private String tempSS;
+    private String smS;
+    private boolean smStraight = false;
+    private boolean lgStraight = false;
+    private boolean fullHouse = false;
+    private bolean yahtzee = false;
     
  
     
@@ -26,6 +45,9 @@ public class Calculations //make sure that this is a subclass of Dice and inheri
         and numSame (the number that appears the most times)
         Think about the coin flip tracker exercise*/
         // return the variable maxSame
+        
+        
+        
     }
     
     public int numMaxSame(){
