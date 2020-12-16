@@ -160,6 +160,43 @@ public class Calculations extends Dice
          // you will use the variables tempSS and smS in this method
          //you will return the String valuse of smS
         */
+        String temp1 = Integer.toString(t1);
+        String temp2 = Integer.toString(t2);
+        String temp3 = Integer.toString(t3);
+        String temp4 = Integer.toString(t4);
+        String temp5 = Integer.toString(t5);
+        
+        String first = temp1 + temp2 + temp3 + temp4 + temp5;
+        String second = "";
+        
+        if(first.contains("1") == true){
+            second = second + '1';
+        }
+        
+        if(first.contains("2") == true){
+            second = second + '2';
+        }
+        
+        if(first.contains("3") == true){
+            second = second + '3';
+        }
+        
+        if(first.contains("4") == true){
+            second = second + '4';
+        }
+        
+        if(first.contains("5") == true){
+            second = second + '5';
+        }
+        
+        if(first.contains("6") == true){
+            second = second + '6';
+        }
+        
+        smS = second;
+        
+        return smS;
+   }     
     
     public boolean SmStraight()
     {   
