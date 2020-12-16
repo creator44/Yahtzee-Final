@@ -1,5 +1,5 @@
 import java.util.*;
-public class Calculations //make sure that this is a subclass of Dice and inherits all of the properties of Dice 
+public class Calculations extends Dice
 {
     /*Initialize all of the following instance variables
     You need 12 private integers with the following variable names
@@ -11,7 +11,39 @@ public class Calculations //make sure that this is a subclass of Dice and inheri
     Lastly you will need 4 booleans with the following variable names:
     smStraight, lgStraight, fullHouse, & yahtzee
     Set all of the booleans to false.*/
+    private int ones = 0;
+    private int twos = 0;
+    private int threes = 0;
+    private int fours = 0;
+    private int fives = 0;
+    private int sixes = 0;
+    private int chance = 0;
+    private int threeKind = 0;
+    private int fourKind = 0;
+    private int sumAll = 0;
+    private int sameNum = 0;
+    private int maxSame = 0;
+    private int numSame = 0;
+    private String tempSS;
+    private String smS;
+    private boolean smStraight = false;
+    private boolean lgStraight = false;
+    private boolean fullHouse = false;
+    private bolean yahtzee = false;
+   
+    private int t1 = d1;
+    private int t2 = d2;
+    private int t3 = d3;
+    private int t4 = d4;
+    private int t5 = d5;
     
+    private String temp1 = Integer.toString(t1);
+    private String temp2 = Integer.toString(t2);
+    private String temp3 = Integer.toString(t3);
+    private String temp4 = Integer.toString(t4);
+    private String temp5 = Integer.toString(t5);
+    
+    private String full = temp1 + temp2 + temp3 + temp4 + temp5;
  
     
     public int countSame()
@@ -26,11 +58,104 @@ public class Calculations //make sure that this is a subclass of Dice and inheri
         and numSame (the number that appears the most times)
         Think about the coin flip tracker exercise*/
         // return the variable maxSame
+        if(d1 == 1) {
+            ones++;
+        } else if(d1 == 2) {
+            twos++;
+        } else if(d1 == 3) {
+            threes++;
+        } else if(d1 == 4) {
+            fours++;
+        } else if(d1 == 5) {
+            fives++;
+        } else if(d1 == 6) {
+            sixes++;
+        }
+        if(d2 == 1) {
+            ones++;
+        } else if(d2 == 2) {
+            twos++;
+        } else if(d2 == 3) {
+            threes++;
+        } else if(d2 == 4) {
+            fours++;
+        } else if(d2 == 5) {
+            fives++;
+        } else if(d2 == 6) {
+            sixes++;
+        }
+        if(d3 == 1) {
+            ones++;
+        } else if(d3 == 2) {
+            twos++;
+        } else if(d3 == 3) {
+            threes++;
+        } else if(d3 == 4) {
+            fours++;
+        } else if(d3 == 5) {
+            fives++;
+        } else if(d3 == 6) {
+            sixes++;
+        }
+        if(d4 == 1) {
+            ones++;
+        } else if(d4 == 2) {
+            twos++;
+        } else if(d4 == 3) {
+            threes++;
+        } else if(d4 == 4) {
+            fours++;
+        } else if(d4 == 5) {
+            fives++;
+        } else if(d4 == 6) {
+            sixes++;
+        }
+        if(d5 == 1) {
+            ones++;
+        } else if(d5 == 2) {
+            twos++;
+        } else if(d5 == 3) {
+            threes++;
+        } else if(d5 == 4) {
+            fours++;
+        } else if(d5 == 5) {
+            fives++;
+        } else if(d5 == 6) {
+            sixes++;
+        }
+        
+        if(ones > twos && ones > threes && ones > fours && ones > fives && ones > sixes) {
+            maxSame = ones;
+            numSame = 1;
+        }
+        if(twos > ones && twos > threes && twos > fours && twos > fives && twos > sixes) {
+            maxSame = twos;
+            numSame = 2;
+        }
+        if(threes > ones && threes > twos && threes > fours && threes > fives && threes > sixes) {
+            maxSame = threes;
+            numSame = 3;
+        }
+        if(fours > ones && fours > twos &&  fours > threes && fours > fives && fours > sixes) {
+            maxSame = fours;
+            numSame = 4;
+        }
+        if(fives > ones && fives > twos &&  fives > three && fives > four && fives > sixes) {
+            maxSame = fives;
+            numSame = 5;
+        }
+        if(sixes > ones && sixes > twos &&  sixes > three && sixes > four && sixes > fives) {
+            maxSame = sixes;
+            numSame = 6;
+        }
+        
+        return maxSame;
     }
     
     public int numMaxSame(){
         //this one is short
         //return the variable numSame
+        return numSame;
     }
     
     public String StraightChecker()
@@ -49,6 +174,36 @@ public class Calculations //make sure that this is a subclass of Dice and inheri
          // you will use the variables tempSS and smS in this method
          //you will return the String valuse of smS
         */
+        String first = temp1 + temp2 + temp3 + temp4 + temp5;
+        String second = "";
+        
+        if(first.contains("1") == true){
+            second = second + '1';
+        }
+        
+        if(first.contains("2") == true){
+            second = second + '2';
+        }
+        
+        if(first.contains("3") == true){
+            second = second + '3';
+        }
+        
+        if(first.contains("4") == true){
+            second = second + '4';
+        }
+        
+        if(first.contains("5") == true){
+            second = second + '5';
+        }
+        
+        if(first.contains("6") == true){
+            second = second + '6';
+        }
+        
+        smS = second;
+        
+        return smS;
     
     public boolean SmStraight()
     {   
@@ -57,6 +212,19 @@ public class Calculations //make sure that this is a subclass of Dice and inheri
         and compare it to all of the small straight options
         and if it meets one of those small straight options 
         it should return true for the variable smStraight*/
+        if(full.contains("1234")) {
+            smStraight = true;
+        }
+        
+        if(full.contains("2345")) {
+            smStraight = true;
+        }
+        
+        if(full.contain("3456")) {
+            smStraight = true;
+        }
+        
+        return smStraight;
     }
     public boolean LgStraight()
     {
@@ -65,6 +233,15 @@ public class Calculations //make sure that this is a subclass of Dice and inheri
         and compare it to all of the Large straight options
         and if it meets one of those Large straight options 
         it should return true for the variable lgStraight*/
+        if(full.contains("12345")) {
+            lgStraight = true;
+        }
+        
+        if(full.contains("23456")) {
+            lgStraight = true;
+        }
+        
+        return lgStraight;
     }
     public boolean FullHouseCheck()
     {
